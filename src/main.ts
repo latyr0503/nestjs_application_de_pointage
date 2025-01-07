@@ -6,7 +6,7 @@ async function bootstrap() {
 
   // Utilisez la méthode intégrée pour activer CORS
   app.enableCors({
-    origin: '*', // Autoriser toutes les origines (pour le développement local)
+    origin: 'http://localhost:5173', // Autoriser toutes les origines (pour le développement local)
     methods: 'GET,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type, Authorization',
   });
