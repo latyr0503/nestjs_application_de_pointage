@@ -8,10 +8,13 @@ import {
   Param,
 } from '@nestjs/common';
 import { DepenseService } from './depense.service';
+import { Logger } from '@nestjs/common';
 import { Depense } from './depense.entity';
 
 @Controller('depense')
 export class DepenseController {
+  private readonly logger = new Logger(DepenseController.name);
+
   constructor(private readonly DepenseService: DepenseService) {}
 
   @Get()
@@ -25,8 +28,11 @@ export class DepenseController {
   }
 
   @Post()
-  create(@Body() createDepenseDto: Depense): Promise<Depense> {
-    return this.DepenseService.create(createDepenseDto);
+  async create(@Body() createDepenseDto: Depense): Promise<Depense> {
+    this.logger.log('Creating a new expense...');
+    const createdDepense = await this.DepenseService.create(createDepenseDto);
+    this.logger.log(`Expense created with ID: ${createdDepense.id}`);
+    return createdDepense;
   }
 
   @Put(':id')
