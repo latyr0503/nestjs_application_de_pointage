@@ -2,10 +2,12 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { RevenuModule } from './revenu/revenu.module';
-import { DepenseModule } from './depense/depense.module';
 import * as dotenv from 'dotenv';
-import * as fs from 'fs';
+import { AuthModule } from './auth/auth.module';
+import { PointagesModule } from './pointages/pointages.module';
+import { JustificationsAbsenceModule } from './justifications_absence/justifications_absence.module';
+
+// import * as fs from 'fs';
 dotenv.config();
 @Module({
   imports: [
@@ -18,13 +20,11 @@ dotenv.config();
       database: process.env.DB_NAME,
       synchronize: true,
       logging: true,
-      ssl: {
-        ca: fs.readFileSync('./certs/ca-certificate.crt').toString(),
-      },
       autoLoadEntities: true,
     }),
-    RevenuModule,
-    DepenseModule,
+    AuthModule,
+    PointagesModule,
+    JustificationsAbsenceModule,
   ],
   controllers: [AppController],
   providers: [AppService],
