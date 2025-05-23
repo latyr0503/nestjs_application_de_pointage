@@ -6,7 +6,7 @@ export class SignInDto {
     description: "Adresse email de l'utilisateur",
     example: 'latyr@gmail.com',
   })
-  @IsEmail({}, { message: 'Email invalide' })
+  @IsEmail({}, { message: 'Email invalide ou non renseigné' })
   email: string;
 
   @ApiProperty({
