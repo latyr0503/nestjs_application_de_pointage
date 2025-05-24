@@ -1,73 +1,63 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Documentation du Projet NestJS - Application de Gestion de Budget
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+### Introduction
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Ce projet est une application backend développée avec le framework **NestJS**. Elle permet de gérer les pointages des employés, les justifications d'absence, et d'autres fonctionnalités liées à la gestion des utilisateurs.
 
-## Description
+L'application utilise **TypeORM** pour la gestion de la base de données et expose une API REST documentée avec **Swagger**.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Installation
+### Fonctionnalités principales
 
-```bash
-$ pnpm install
-```
+1. **Gestion des utilisateurs** :
+   - Création de comptes utilisateurs.
+   - Authentification avec JWT.
 
-## Running the app
+2. **Gestion des pointages** :
+   - Création, mise à jour, suppression et récupération des pointages.
+   - Gestion des horaires d'arrivée et de départ.
 
-```bash
-# development
-$ pnpm run start
+3. **Gestion des justifications d'absence** :
+   - Création, mise à jour, suppression et récupération des justifications d'absence.
+   - Association des justifications à des utilisateurs.
 
-# watch mode
-$ pnpm run start:dev
+4. **Documentation API** :
+   - Documentation interactive via Swagger disponible à `/api-docs`.
 
-# production mode
-$ pnpm run start:prod
-```
+---
 
-## Test
+### Installation et démarrage
 
-```bash
-# unit tests
-$ pnpm run test
+#### Prérequis
+- **Node.js** (version 16 ou supérieure)
+- **PostgreSQL** (base de données utilisée)
+- **pnpm** (gestionnaire de paquets)
 
-# e2e tests
-$ pnpm run test:e2e
+#### Étapes
 
-# test coverage
-$ pnpm run test:cov
-```
+1. **Cloner le projet** :
+   ```bash
+   git clone https://github.com/latyr0503/nestjs_application_de_pointage
+   ```
 
-## Support
+2. **Installer les dépendances** :
+   ```bash
+   pnpm install
+   ```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+3. **Configurer la base de données** :
+   - Créer une base de données PostgreSQL.
+   - Copiez le fichier `.env.example` vers `.env`
+- Remplissez les variables d'environnement nécessaires
 
-## Stay in touch
+4. **Démarrer l'application** :
+   ```bash
+   pnpm run start:dev
+   ```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+5. **Accéder à l'API** :
+   - L'API sera disponible sur `http://localhost:3000`.
+   - La documentation Swagger sera accessible sur `http://localhost:3000/api-docs`.
 
-## License
-
-Nest is [MIT licensed](LICENSE).
+---
