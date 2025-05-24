@@ -50,33 +50,29 @@ export class PointagesService {
   }
 
   async update(id: number, updateDto: UpdatePointageDto): Promise<Pointage> {
-    let user = null;
-    if (updateDto.userId) {
-      user = await this.userRepository.findOne({
-        where: { id: updateDto.userId },
-      });
-
-      if (!user) {
-        throw new NotFoundException(
-          `Utilisateur avec l'ID ${updateDto.userId} non trouvé`,
-        );
-      }
-    }
-
     const updateData: any = {};
+
     if (updateDto.date) updateData.date = new Date(updateDto.date);
     if (updateDto.heure_arrivee)
       updateData.heure_arrivee = updateDto.heure_arrivee;
     if (updateDto.heure_depart)
       updateData.heure_depart = updateDto.heure_depart;
     if (updateDto.statut) updateData.statut = updateDto.statut;
-    if (user) updateData.user = user;
 
+    // Mise à jour des données du pointage
     await this.pointagesRepository.update(id, updateData);
-    return this.pointagesRepository.findOne({
+
+    // Retourne le pointage mis à jour avec les relations
+    const updatedPointage = await this.pointagesRepository.findOne({
       where: { id },
       relations: ['user'],
     });
+
+    if (!updatedPointage) {
+      throw new NotFoundException(`Pointage avec l'ID ${id} non trouvé`);
+    }
+
+    return updatedPointage;
   }
 
   async remove(id: number): Promise<void> {

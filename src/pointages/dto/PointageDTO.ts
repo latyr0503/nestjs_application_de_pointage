@@ -55,15 +55,6 @@ export class CreatePointageDto {
 
 export class UpdatePointageDto extends PartialType(CreatePointageDto) {
   @ApiProperty({
-    description: "ID de l'utilisateur concerné",
-    example: 1,
-    required: false,
-  })
-  @IsOptional()
-  @IsInt()
-  userId?: number;
-
-  @ApiProperty({
     description: 'Date du pointage (format ISO)',
     example: '2024-03-19',
     required: false,
