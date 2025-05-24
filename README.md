@@ -1,6 +1,6 @@
 # Documentation du Projet NestJS - Application de Gestion de Budget
 
-### Introduction
+## Introduction
 
 Ce projet est une application backend développée avec le framework **NestJS**. Elle permet de gérer les pointages des employés, les justifications d'absence, et d'autres fonctionnalités liées à la gestion des utilisateurs.
 
@@ -32,7 +32,7 @@ url : https://nestjs-application-de-pointage.onrender.com/api-docs
 
 ---
 
-### Installation et démarrage
+## Installation et démarrage
 
 #### Prérequis
 
