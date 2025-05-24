@@ -12,7 +12,7 @@ dotenv.config();
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: process.env.DB_TYPE as 'postgres',
+      type: (process.env.DB_TYPE as any) || 'postgres',
       host: process.env.DB_HOST,
       port: +process.env.DB_PORT,
       username: process.env.DB_USERNAME,
@@ -21,6 +21,7 @@ dotenv.config();
       synchronize: true,
       logging: true,
       autoLoadEntities: true,
+      ssl: true,
     }),
     AuthModule,
     PointagesModule,
