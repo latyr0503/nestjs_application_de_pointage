@@ -10,7 +10,9 @@ L'application utilise **TypeORM** pour la gestion de la base de données et expo
 ### Lien de deploiement
 url : https://nestjs-application-de-pointage.onrender.com/api-docs
 
-### Fonctionnalités principales
+---
+
+## Fonctionnalités principales
 
 1. **Gestion des utilisateurs** :
 
