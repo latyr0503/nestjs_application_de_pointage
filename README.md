@@ -73,10 +73,10 @@ Le système utilise deux niveaux de rôles principaux :
 
 1. **Inscription Standard**
 
-   - Tous les utilisateurs s'inscrivant via la page d'inscription (`/register`) sont automatiquement attribués au rôle `USER`
+  - Tous les utilisateurs s'inscrivant via la page d'inscription (`/register`) sont automatiquement attribués au rôle `USER`
    - Ce rôle permet l'accès aux fonctionnalités de base :
-     - absebce (entrée/sortie)
-     - Consultation de son historique et modification
+     - absence (ajouter/supprimer/modifier)
+     - Consultation de son historique de demande d'absence et modification
 
 2. **Promotion en Administrateur**
    - L'jout d'un administrateur ne peut se faire que via l'API
@@ -84,6 +84,12 @@ Le système utilise deux niveaux de rôles principaux :
    1. Accéder à l'interface Swagger (`/api-docs`)
    2. Creer un admin via l'endpoint (`/auth/signup`)
    3. Changer le role de `USER` à `ADMIN`
+   - Ce rôle permet l'accès aux fonctionnalités tel que :
+    - ajouter des pointages
+    - modifier des pointages
+    - suppimer des pointages
+    - Consultation des historique des demandes d'absence
+    - Consulter la liste des utilisateurs
 
 ### Exemple de Modification de Rôle via Swagger
 
