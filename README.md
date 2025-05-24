@@ -11,14 +11,17 @@ L'application utilise **TypeORM** pour la gestion de la base de données et expo
 ### Fonctionnalités principales
 
 1. **Gestion des utilisateurs** :
+
    - Création de comptes utilisateurs.
    - Authentification avec JWT.
 
 2. **Gestion des pointages** :
+
    - Création, mise à jour, suppression et récupération des pointages.
    - Gestion des horaires d'arrivée et de départ.
 
 3. **Gestion des justifications d'absence** :
+
    - Création, mise à jour, suppression et récupération des justifications d'absence.
    - Association des justifications à des utilisateurs.
 
@@ -30,6 +33,7 @@ L'application utilise **TypeORM** pour la gestion de la base de données et expo
 ### Installation et démarrage
 
 #### Prérequis
+
 - **Node.js** (version 16 ou supérieure)
 - **PostgreSQL** (base de données utilisée)
 - **pnpm** (gestionnaire de paquets)
@@ -37,11 +41,13 @@ L'application utilise **TypeORM** pour la gestion de la base de données et expo
 #### Étapes
 
 1. **Cloner le projet** :
+
    ```bash
    git clone https://github.com/latyr0503/nestjs_application_de_pointage
    ```
 
 2. **Installer les dépendances** :
+
    ```bash
    pnpm install
    ```
@@ -49,9 +55,11 @@ L'application utilise **TypeORM** pour la gestion de la base de données et expo
 3. **Configurer la base de données** :
    - Créer une base de données PostgreSQL.
    - Copiez le fichier `.env.example` vers `.env`
+
 - Remplissez les variables d'environnement nécessaires
 
 4. **Démarrer l'application** :
+
    ```bash
    pnpm run start:dev
    ```
@@ -73,10 +81,10 @@ Le système utilise deux niveaux de rôles principaux :
 
 1. **Inscription Standard**
 
-  - Tous les utilisateurs s'inscrivant via la page d'inscription (`/register`) sont automatiquement attribués au rôle `USER`
-   - Ce rôle permet l'accès aux fonctionnalités de base :
-     - absence (ajouter/supprimer/modifier)
-     - Consultation de son historique de demande d'absence et modification
+- Tous les utilisateurs s'inscrivant via la page d'inscription (`/register`) sont automatiquement attribués au rôle `USER`
+- Ce rôle permet l'accès aux fonctionnalités de base :
+  - absence (ajouter/supprimer/modifier)
+  - Consultation de son historique de demande d'absence et modification
 
 2. **Promotion en Administrateur**
    - L'jout d'un administrateur ne peut se faire que via l'API
@@ -85,11 +93,10 @@ Le système utilise deux niveaux de rôles principaux :
    2. Creer un admin via l'endpoint (`/auth/signup`)
    3. Changer le role de `USER` à `ADMIN`
    - Ce rôle permet l'accès aux fonctionnalités tel que :
-    - ajouter des pointages
-    - modifier des pointages
-    - suppimer des pointages
-    - Consultation des historique des demandes d'absence
-    - Consulter la liste des utilisateurs
+  - ajouter des pointages (pour l'ajout des pointage seul les utlisateurs incrit sur la base de donnes pourront etre ajouter, dont pour ajouter un pointage faut creer des comptes utlisateurs) - modifier des pointages
+  - suppimer des pointages
+  - Consultation des historique des demandes d'absence
+  - Consulter la liste des utilisateurs
 
 ### Exemple de Modification de Rôle via Swagger
 
@@ -98,4 +105,5 @@ Le système utilise deux niveaux de rôles principaux :
   "role": "ADMIN"
 }
 ```
+
 ---
