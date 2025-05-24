@@ -6,7 +6,6 @@ Ce projet est une application backend développée avec le framework **NestJS**.
 
 L'application utilise **TypeORM** pour la gestion de la base de données et expose une API REST documentée avec **Swagger**.
 
----
 ### Lien de deploiement
 url : https://nestjs-application-de-pointage.onrender.com/api-docs
 
