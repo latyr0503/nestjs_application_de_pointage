@@ -21,7 +21,14 @@ dotenv.config();
       synchronize: true,
       logging: true,
       autoLoadEntities: true,
-      ssl: true,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+      extra: {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      },
     }),
     AuthModule,
     PointagesModule,
